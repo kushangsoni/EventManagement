@@ -1,0 +1,61 @@
+
+body{
+background-color: #f1f1f1 !important;
+
+}
+.dashboard{
+	margin-top: 20px;
+	box-shadow: 5px 5px 5px 5px #c1c1c1;
+}
+.check h1{
+	padding:0px;
+	font-weight: 400;
+	color: #129cf3;
+}
+.abc{
+    padding:0px;
+    font-weight: 400;
+    color: #129cf3;
+}
+.power i{
+	width: 30%;
+}
+.main-dashboard{
+	
+	margin-top: 20px;
+	box-shadow: 5px 5px 5px 5px #c1c1c1;
+		
+}
+.main-dashboard i{
+	color: #129CF3;
+}
+.select{
+	padding:20px;
+}
+.available-on-item i {
+    color: #129CF3;
+    text-align: center;
+    opacity: 1;
+    font-size: 40px;
+    padding-top: 20px;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -webkit-transition: all 1s;
+}
+.power i{
+color: #129CF3;
+    text-align: center;
+    opacity: 1;
+    font-size: 40px;
+    padding-top: 20px;
+    transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -webkit-transition: all 1s;	
+}
+.available-on-inner{
+	margin-left: -30px;
+	margin-top:10px; 
+	text-align: left;
+}

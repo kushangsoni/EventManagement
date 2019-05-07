@@ -1,0 +1,239 @@
+﻿
+<html>
+<head>
+    <title></title>
+    <!-- Google Fonts -->
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500,500i,600,600i,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400i,600,600i,700,900" rel="stylesheet">
+
+
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="~/Content/login.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">  -->
+    <!-- Awesome Fonts -->
+    <!-- links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500,500i,600,600i,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400i,600,600i,700,900" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- CSS -->
+    
+    <link type="text/css" href="Css/Insert.css" rel="stylesheet" />
+    <!-- Awesome Fonts -->
+    <!-- links -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+    <script src="Scripts/jquery-1.10.2.min.js"></script>
+
+</head>
+<body>
+    <section class="dashboard" onload="disabled1()">
+        <div class="container">
+
+            <div class="row">
+                <div class="check col-md-4 col-md-offset-1">
+
+                </div>
+                <div class="power col-md-2 col-md-offset-5">
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="InsertData">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-2">
+                    <div class="forum">
+                        
+                            <div class="space11">
+                                <h3 style="text-align: center;color: #129cf3;text-decoration: underline;">Enter Event Information</h3>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Select Event Type:</h4>
+                                    </div>
+                                    <div class="col-md-5 input" style="margin-right: 0px;">
+                                        <select class="form-control" name="etype" id="etype" ">
+                                            <option value="">--Select Type--</option>
+                                            <option value="workshop">WorkShop</option>
+                                            <option value="Praksh Event">Prakarsh</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Select Event-Level:</h4>
+                                    </div>
+                                    <div class="col-md-6 input">
+                                        <select class="form-control" name="elevel" id="elevel">
+                                            <option value="">--Select Type--</option>
+                                            <option value="CollegeLevel">CollegeLevel</option>
+                                            <option value="UniversityLevel">UniversityLevel</option>
+                                            <option value="StateLevel">StateLevel</option>
+                                            <option value="CountryLevel">CountryLevel</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Enter Event-Name:</h4>
+                                    </div>
+                                    <div class="col-md-6 input">
+                                        <input type="text" class="form-control" name="ename" id="ename">
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Enter Event Venue:</h4>
+                                    </div>
+                                    <div class="col-md-6 input">
+                                        <input type="text" class="form-control" name="evenue" id="evenue">
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Enter Event Date</h4>
+                                    </div>
+                                    <div class="col-md-6 input">
+                                        <input type="date" name="edate" id="edate" class="form-control">
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Enter Event Time</h4>
+                                    </div>
+                                    <div class="col-md-6 input">
+                                        <input type="time" class="form-control" name="etime" id="etime">
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Enter Events Last Date Of Registration</h4>
+                                    </div>
+                                    <div class="col-md-6 input">
+                                        <input type="date" class="form-control" name="eregdate" id="eregdate">
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Enter Event Coordinaters Name:</h4>
+                                    </div>
+                                    <div class="col-md-6 input">
+                                        <input type="text" class="form-control" name="econame" id="econame">
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Enter Event Coordinators Contact No</h4>
+                                    </div>
+                                    <div class="col-md-6 input">
+                                        <input type="text" class="form-control" name="eno" id="eno">
+                                    </div>
+
+                                </div>
+                                <div class="row" style="margin-bottom: 6px;">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Enter Event description</h4>
+                                    </div>
+                                    <div class="col-md-6 input">
+                                        <textarea style="resize: vertical;" class="form-control" name="edesc" id="edesc" cols="30" rows="6"></textarea>
+                                    </div>
+
+                                </div>
+                                <div class="row" style="margin-bottom: 30px;">
+                                    <div class="col-md-5 col-md-offset-3">
+                                        <button type="submit" id="b1" class="form-control">Update Record</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script>
+        $(document).ready(function () {
+            updateId = localStorage.getItem("updateId");
+            
+            $.getJSON("/api/event/" + updateId, function (data) {
+
+                $("#etype").val(data.EventType);
+                $("#elevel").val(data.EventLevel);
+                $("#ename").val(data.EventName);
+                $("#evenue").val(data.EventVenue);
+                var temp = data.EventDate;
+                $("#edate").val(temp.substr(0, 10));
+                $("#etime").val(data.EventTime);
+                var temp = data.EventRegistrationDate;
+                $("#eregdate").val(temp.substr(0, 10));
+                $("#econame").val(data.EventCoName);
+                $("#eno").val(data.EventCoNo);
+                $("#edesc").val(data.EventDesc);
+            })
+        });
+
+        $("#b1").click(function () {
+            var Eventtype = $("#etype").val();
+            var Eventlevel = $("#elevel").val();
+            var Eventname = $("#ename").val();
+            var Eventvenue = $("#evenue").val();
+            var Eventdate = $("#edate").val();
+            var Eventtime = $("#etime").val();
+            var EventregistrationDate = $("#eregdate").val();
+            var EventcoName = $("#econame").val();
+            var EventcoNo = $("#eno").val();
+            var Eventdesc = $("#edesc").val();
+            $.ajax({
+                type: "put",
+                contentType: "application/json;charset=utf-8",
+                url: "/api/event/" + updateId,
+                data: JSON.stringify({
+                    Id: updateId,
+                    EventType: Eventtype,
+                    EventLevel: Eventlevel,
+                    EventName: Eventname,
+                    EventVenue: Eventvenue,
+                    EventDate: Eventdate,
+                    EventTime: Eventtime,
+                    EventRegistrationDate: EventregistrationDate,
+                    EventCoName: EventcoName,
+                    EventCoNo: EventcoNo,
+                    EventDesc: Eventdesc
+        }),
+
+            dataType: "JSON",
+                success: function (data) {
+                    alert("Event Updated Sucessfully");
+                    location.href = "UserDashBoard.html";
+                }
+            });
+        })
+    </script>
+</body>
+</html>
+
+
+

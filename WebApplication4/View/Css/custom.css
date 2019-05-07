@@ -1,0 +1,56 @@
+
+.Login{
+	margin-top: 50ppppp;
+	margin-left: 20px;
+	
+	
+}
+.forum{
+	padding-top: 100px !important;
+	padding-bottom: 100px !important;
+	background-color: #D7D7D7;
+	text-align: center;
+	border: 2px solid #717171;
+	padding: 20px;
+	
+
+}
+.forum a{
+	margin-top: 30px;
+	text-align: left;
+	text-decoration: none;
+	font-size: 20px;
+
+
+}
+.name input{
+	padding: 20px;
+	margin-right: 10px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-left: 0;
+
+	}
+.name button{
+	width: 100%;
+	transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+    -webkit-transition: all 1s;
+    background-color: #129CF3;
+    color:#fff;
+    font-size: 20px;
+    
+}
+.name button:hover{
+	color: #129CF3;
+	background-color: #ffffff;
+}
+
+.Login h2{
+	text-align: left;
+	color: #129cf3;
+	font-size: 42px;
+	font-weight: 800;
+
+}

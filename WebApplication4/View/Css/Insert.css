@@ -1,0 +1,38 @@
+body{
+background-color: #f1f1f1 !important;
+
+}
+.dashboard{
+	margin-top: 20px;
+	box-shadow: 5px 5px 5px 5px #c1c1c1;
+}
+.dashboard h1{
+	color: #129cf3;
+	font-weight: 400px;
+}
+.power i{
+	margin-top: 20px;
+width: 30%;
+font-size:40px; 
+color: red;
+}
+.forum{
+	margin-top: 20px;
+	border: 2px gray solid;
+	margin-bottom: 200px;
+}
+.input{
+	margin-top: 7px;
+}
+.row h4{
+	color: #129CF3;
+	padding-left: 5px;
+}
+#EType{
+	margin-top: 7px;
+	 margin-left: 0px;
+	 color: red;
+}
+.insertData{
+	margin-bottom: 100px;
+}

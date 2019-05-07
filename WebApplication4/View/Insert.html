@@ -1,0 +1,357 @@
+﻿
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:500,500i,600,600i,900i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400i,600,600i,700,900" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <!-- CSS -->
+        
+        <link type="text/css" href="Css/Insert.css" rel="stylesheet" />
+        <!-- Awesome Fonts -->
+        <!-- links -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+        <script src="Scripts/jquery-1.10.2.min.js"></script>
+
+    </head>
+    <body>
+
+        <script>
+            var EType = false;
+            var ELevel = false;
+            var EName = false;
+            var EVenue = false;
+            var EDate = false;
+            var ETime = false;
+            var ERegDate = false;
+            var ECoName = false;
+            var ENo = false;
+            var EDesc = false;
+            console.log("repeat");
+            function checkElementEmpty(element, divelement) {
+                if (element.value == "") {
+                    window[divelement] = false;
+                    console.log(divelement);
+                    document.getElementById(divelement).innerHTML = "please enterValue";
+
+
+                }
+                else {
+
+                    if (element.id == "ename") {
+                        // if no records found
+                        if (data1.length == 0) {
+                            window[divelement] = true;
+                            document.getElementById(divelement).innerHTML = "";
+                        }
+                        else {
+                            $.each(data1, function (key, val) {
+                                var eventName = element.value;
+                                if (eventName == val.EventName) {
+                                    document.getElementById(divelement).innerHTML = "Event Name Already Exist";
+                                    window[divelement] = false;
+                                } else {
+                                    window[divelement] = true;
+                                    document.getElementById(divelement).innerHTML = "";
+                                }
+                            })
+                        }
+                    }
+                    else {
+                        window[divelement] = true;
+                        document.getElementById(divelement).innerHTML = "";
+
+                    }
+                }
+                console.log(window[divelement]);
+
+                if (window.EType && window.ELevel && window.EName && window.EVenue && window.EDate && window.ETime && window.ERegDate && window.ECoName && window.ENo && window.EDesc) {
+                    document.getElementById("b1").disabled = false;
+                }
+                else {
+                    document.getElementById("b1").disabled = true;
+                }
+
+            }
+            var data1 = [];
+            $(document).ready(function () {
+                document.getElementById("b1").disabled = true;
+                $.getJSON("/api/event/", function (data) {
+                    $.each(data, function (key, val) {
+                        window.data1.push(val);
+                    })    
+                })
+            });
+            console.log(data1);
+            function checkExist() {
+                var eventName = $("#ename").val();
+                if (eventName == "") {
+                    document.getElementById("EName").innerHTML = "please enter value"
+                    document.getElementById("b1").disabled = true;
+                }
+                else {
+
+                    //$.getJSON("/api/event/", function (data) {
+                        if (data1.length == 0) {
+                            document.getElementById("b1").disabled = false;
+                            $("div#EName").html("");
+                        }
+                        else {
+                            $.each(data1, function (key, val) {
+                                if (eventName == val.EventName) {
+                                    $("div#EName").html("Event Name Already Exist");
+                                    document.getElementById("b1").disabled = true;
+                                } else {
+                                    $("div#EName").html("");
+                                    document.getElementById("b1").disabled = false;
+                                }
+                            })
+                        }
+                    //})
+                }
+            }
+
+            function isNameEmpty() {
+                if (eName == "") {
+
+                }
+                else {
+                    document.getElementById("b1").disabled = false;
+                }
+            }
+            function checkEmpty() {
+                var eName = $("#ename").val();
+
+                if (eName == "") {
+                    document.getElementById("EName").innerHTML = "please enter value"
+                    document.getElementById("b1").disabled = true;
+                }
+                else {
+
+                }
+            }
+
+        </script>
+        <section class="dashboard">
+            <div class="container">
+                <div class="row">
+                    <div class="check col-md-4 col-md-offset-1">
+
+                    </div>
+                    <div class="power col-md-2 col-md-offset-5">
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <section class="InsertData">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-2">
+                        <div class="forum">
+                            <div class="space11">
+                                <h3 style="text-align: center;color: #129cf3;text-decoration: underline;">Enter Event Information</h3>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Select Event Type:</h4>
+                                    </div>
+                                    <div class="col-md-5 input" style="margin-right: 0px;">
+                                        <select class="form-control" onblur="checkElementEmpty(this,'EType')" name="etype" id="etype">
+                                            <option value="">--Select Type--</option>
+                                            <option value="workshop">WorkShop</option>
+                                            <option value="Praksh Event">Prakarsh</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2" id="EType" style="margin-top: 7px; margin-left: 0px; color: red">
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Select Event-Level:</h4>
+                                    </div>
+                                    <div class="col-md-6 input">
+                                        <select class="form-control" onblur="checkElementEmpty(this,'ELevel')" name="elevel" id="elevel">
+                                            <option value="">--Select Type--</option>
+                                            <option value="CollegeLevel">CollegeLevel</option>
+                                            <option value="UniversityLevel">UniversityLevel</option>
+                                            <option value="StateLevel">StateLevel</option>
+                                            <option value="CountryLevel">CountryLevel</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2" id="ELevel" style="margin-top: 7px; margin-left: 0px; color: red">
+
+                                    </div>
+
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Enter Event-Name:</h4>
+                                    </div>
+                                    <div class="col-md-6 input">
+                                        <input type="text" class="form-control" onblur="checkElementEmpty(this,'EName')" name="ename" id="ename">
+
+                                    </div>
+                                    <div class="col-md-2" id="EName" style="margin-top: 7px; margin-left: 0px; color: red">
+
+                                    </div>
+                                     
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Enter Event Venue:</h4>
+                                    </div>
+                                    <div class="col-md-6 input">
+                                        <input type="text" class="form-control" name="evenue" onblur="checkElementEmpty(this,'EVenue')" id="evenue">
+                                    </div>
+                                    <div class="col-md-2" id="EVenue" style="margin-top: 7px; margin-left: 0px; color: red">
+
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Enter Event Date</h4>
+                                    </div>
+                                    <div class="col-md-6 input">
+                                        <input type="date" name="edate"  onblur="checkElementEmpty(this,'EDate')" id="edate" class="form-control">
+                                    </div>
+                                    <div class="col-md-2" id="EDate" style="margin-top: 7px; margin-left: 0px; color: red">
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Enter Event Time</h4>
+                                    </div>
+                                    <div class="col-md-6 input">
+                                        <input type="time" class="form-control" onblur="checkElementEmpty(this,'ETime')"  name="etime" id="etime">
+                                    </div>
+                                    <div class="col-md-2" id="ETime" style="margin-top: 7px; margin-left: 0px; color: red">
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Enter Events Last Date Of Registration</h4>
+                                    </div>
+                                    <div class="col-md-6 input">
+                                        <input type="date" class="form-control" onblur="checkElementEmpty(this,'ERegDate')"  name="eregdate" id="eregdate">
+                                    </div>
+                                    <div class="col-md-2" id="ERegDate" style="margin-top: 7px; margin-left: 0px; color: red">
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Enter Event Coordinaters Name:</h4>
+                                    </div>
+                                    <div class="col-md-6 input">
+                                        <input type="text" class="form-control" onblur="checkElementEmpty(this,'ECoName')"  name="econame" id="econame">
+                                    </div>
+                                    <div class="col-md-2" id="ECoName" style="margin-top: 7px; margin-left: 0px; color: red">
+
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Enter Event Coordinators Contact No</h4>
+                                    </div>
+                                    <div class="col-md-6 input">
+                                        <input type="text" class="form-control" onblur="checkElementEmpty(this,'ENo')" name="eno" id="eno">
+                                    </div>
+                                    <div class="col-md-2" id="ENo" style="margin-top: 7px; margin-left: 0px; color: red">
+
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-bottom: 6px;">
+                                    <div class="col-md-3 col-md-offset-1">
+                                        <h4>Enter Event description</h4>
+                                    </div>
+                                    <div class="col-md-6 input">
+                                        <textarea style="resize: vertical;" class="form-control" onblur="checkElementEmpty(this,'EDesc')" name="edesc" id="edesc" cols="30" rows="6"></textarea>
+                                    </div>
+                                    <div class="col-md-2" id="EDesc" style="margin-top: 7px; margin-left: 0px; color: red">
+
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-bottom: 30px;">
+                                    <div class="col-md-5 col-md-offset-3">
+                                        <button type="submit" id="b1" class="form-control">Insert Record</button>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <script>
+
+$("#b1").click(function () {
+    var Eventtype = $("#etype").val();
+    var Eventlevel = $("#elevel").val();
+    var Eventname =  $("#ename").val();
+    var Eventvenue= $("#evenue").val();
+    var Eventdate= $("#edate").val();
+
+    var Eventtime = $("#etime").val();
+    var EventregistrationDate = $("#eregdate").val();
+    var EventcoName = $("#econame").val();
+    var EventcoNo= $("#eno").val();
+    var Eventdesc= $("#edesc").val();
+            $.ajax({
+
+                type: "POST",
+
+                contentType: "application/json;charset=utf-8",
+
+                url: "/api/event",
+
+                data: JSON.stringify({
+                    EventType: Eventtype,
+                    EventLevel: Eventlevel,
+                    EventName: Eventname,
+                    EventVenue: Eventvenue,
+                    EventDate: Eventdate,
+                    EventTime: Eventtime,
+                    EventRegistrationDate: EventregistrationDate,
+                    EventCoName: EventcoName,
+                    EventCoNo: EventcoNo,
+                    EventDesc: Eventdesc
+                }),
+
+                dataType: "JSON",
+
+                success: function () {
+                    alert("data insertd sucessfully");
+                    location.href = "UserDashBoard.html";
+                },
+                error: function (data) {
+                    alert("failed");
+                }
+            });
+        })
+        </script>
+
+
+
+
+
+
+
+    </body>
+</html>
+
+
+
